@@ -12,9 +12,9 @@ public class MainServer {
        System.out.println("SERVER:inizio l'esecuzione");
         try {
             ServerSocket server = new ServerSocket(2000);
-            System.err.println("SERVER: in attesa di richieste dal client.");
+            System.out.println("SERVER: in attesa di richieste dal client.");
             Socket clientSocket = server.accept();
-            System.err.println("SERVER: il client si è connesso.");
+            System.out.println("SERVER: il client si è connesso.");
             InputStream inputStream = clientSocket.getInputStream();
             BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
             String messaggio = br.readLine();
@@ -24,7 +24,7 @@ public class MainServer {
             server.close();
         } catch (IOException e) {
             System.err.println("Porta non disponibile, " +
-                    "errore nella creazione della connection socket!");
+                    "errore nella creazione della connection socket");
         }
     }
 }
